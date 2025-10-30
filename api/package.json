@@ -1,0 +1,12 @@
+{
+  "name": "wedding-api",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "eslint": "^9.38.0",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}
