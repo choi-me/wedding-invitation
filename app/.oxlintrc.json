@@ -1,0 +1,8 @@
+{
+	"plugins": ["import"],
+	"rules": {
+		"import/consistent-type-specifier-style": "error",
+		"import/no-duplicates": "error",
+		"import/no-mutable-exports": "error"
+	}
+}

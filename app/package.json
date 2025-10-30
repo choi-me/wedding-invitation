@@ -1,60 +1,62 @@
 {
-  "name": "wedding-app",
-  "private": true,
-  "version": "0.0.1",
-  "packageManager": "pnpm@10.20.0",
-  "author": "Lucas Choi (lucas@choi.me)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/choi-me/wedding-invitation.git",
-    "directory": "app"
-  },
-  "type": "module",
-  "engines": {
-    "node": ">=24.11.0",
-    "pnpm": ">=10.20.0"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
-    "lint:eslint": "eslint . --fix --cache",
-    "lint": "run-s lint:*",
-    "format": "prettier --write src/"
-  },
-  "dependencies": {
-    "pinia": "^3.0.3",
-    "vue": "^3.5.22",
-    "vue-i18n": "^11.1.12",
-    "vue-router": "^4.6.3"
-  },
-  "devDependencies": {
-    "@prettier/plugin-oxc": "^0.0.4",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^24.9.2",
-    "@vitejs/plugin-vue": "^6.0.1",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.8.1",
-    "eslint": "^9.38.0",
-    "eslint-plugin-oxlint": "~1.23.0",
-    "eslint-plugin-vue": "^10.5.1",
-    "jiti": "^2.6.1",
-    "npm-run-all2": "^8.0.4",
-    "oxlint": "^1.24.0",
-    "prettier": "3.6.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.12",
-    "vite-plugin-vue-devtools": "^8.0.3",
-    "vue-tsc": "^3.1.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "unrs-resolver"
-    ]
-  }
+	"name": "wedding-app",
+	"private": true,
+	"version": "0.0.1",
+	"packageManager": "pnpm@10.20.0",
+	"author": "Lucas Choi (lucas@choi.me)",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/choi-me/wedding-invitation.git",
+		"directory": "app"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=24.11.0",
+		"pnpm": ">=10.20.0"
+	},
+	"scripts": {
+		"dev": "vite --port 2222",
+		"build": "run-p type-check \"build-only {@}\" --",
+		"preview": "vite preview",
+		"build-only": "vite build",
+		"type-check": "vue-tsc --build",
+		"lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+		"lint:eslint": "eslint . --fix --cache",
+		"lint": "run-s lint:*",
+		"format": "prettier --write src/"
+	},
+	"dependencies": {
+		"@unhead/vue": "^2.0.19",
+		"pinia": "^3.0.3",
+		"vue": "^3.5.22",
+		"vue-i18n": "^11.1.12",
+		"vue-router": "^4.6.3"
+	},
+	"devDependencies": {
+		"@prettier/plugin-oxc": "^0.0.4",
+		"@tsconfig/node24": "^24.0.1",
+		"@types/node": "^24.9.2",
+		"@vitejs/plugin-vue": "^6.0.1",
+		"@vue/eslint-config-prettier": "^10.2.0",
+		"@vue/eslint-config-typescript": "^14.6.0",
+		"@vue/tsconfig": "^0.8.1",
+		"eslint": "^9.38.0",
+		"eslint-plugin-oxlint": "~1.23.0",
+		"eslint-plugin-perfectionist": "^4.15.1",
+		"eslint-plugin-vue": "^10.5.1",
+		"jiti": "^2.6.1",
+		"npm-run-all2": "^8.0.4",
+		"oxlint": "^1.24.0",
+		"prettier": "3.6.2",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.12",
+		"vite-plugin-vue-devtools": "^8.0.3",
+		"vue-tsc": "^3.1.2"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"unrs-resolver"
+		]
+	}
 }
