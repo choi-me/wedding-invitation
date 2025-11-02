@@ -2,6 +2,10 @@
 	"name": "wedding-api",
 	"version": "0.0.1",
 	"private": true,
+	"scripts": {
+		"dev": "vc dev --listen 2223",
+		"dep": "vc deploy"
+	},
 	"dependencies": {
 		"@date-fns/utc": "^2.1.1",
 		"@node-rs/argon2": "^2.0.2",
