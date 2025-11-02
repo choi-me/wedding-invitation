@@ -1,8 +1,5 @@
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import pluginOxlint from 'eslint-plugin-oxlint'
 import perfectionist from 'eslint-plugin-perfectionist'
-import pluginVue from 'eslint-plugin-vue'
 import { globalIgnores } from 'eslint/config'
 
 // To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
@@ -20,39 +17,16 @@ export default defineConfigWithVueTs(
 
 	pluginVue.configs['flat/recommended'],
 	vueTsConfigs.recommended,
-	{
-		rules: {
-			// ✅ Disallow accidentally using the "empty object" type.
-			'@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'always' }],
-			// ✅ Disallow the any type.
-			'@typescript-eslint/no-explicit-any': 'off',
-			// ✅ Disallow unused variables.
-			'@typescript-eslint/no-unused-vars': [
-				'warn',
-				{
-					args: 'after-used',
-					// (_unusedParam1, usedParam1) => { fn1(usedParam1) }
-					argsIgnorePattern: '^_',
-					caughtErrors: 'none',
-					ignoreRestSiblings: true,
-					vars: 'all',
-					// const ignoredUnused1 = true, unused2Ignored = 10;
-					varsIgnorePattern: '[iI]gnored',
-				},
-			],
-		},
-	},
-	{
-		rules: {
-			'vue/block-order': [
-				'error',
-				{
-					order: ['script', 'template', 'style'],
-				},
-			],
-			'vue/multi-word-component-names': 'off',
-		},
-	},
+	// {
+	// 	rules: {
+	// 		'vue/block-order': [
+	// 			'error',
+	// 			{
+	// 				order: ['script', 'template', 'style'],
+	// 			},
+	// 		],
+	// 	},
+	// },
 
 	{
 		plugins: { perfectionist },
@@ -89,5 +63,5 @@ export default defineConfigWithVueTs(
 	},
 
 	...pluginOxlint.configs['flat/recommended'],
-	skipFormatting,
+	skipFormatting
 )

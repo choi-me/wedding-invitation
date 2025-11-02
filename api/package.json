@@ -1,18 +1,24 @@
 {
-  "name": "wedding-api",
-  "version": "0.0.1",
-  "private": true,
-  "devDependencies": {
-    "@types/node": "^24.9.2",
-    "eslint": "^9.38.0",
-    "prettier": "3.6.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.1.12"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "unrs-resolver"
-    ]
-  }
+	"name": "wedding-api",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"@date-fns/utc": "^2.1.1",
+		"@node-rs/argon2": "^2.0.2",
+		"date-fns": "^4.1.0",
+		"hono": "^4.10.4"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "2.3.2",
+		"@types/node": "^24.9.2",
+		"typescript": "^5.9.3",
+		"vite": "^7.1.12"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"unrs-resolver"
+		]
+	}
 }
