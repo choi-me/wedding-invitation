@@ -1,19 +1,12 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
+import { commentsRoute } from './comments/comments.route.js'
+
+import 'dotenv/config'
 
 const app = new Hono()
 
-const welcomeStrings = ['Hello!', 'api server test']
-
-app.get('/', (c) => {
-	return c.text(welcomeStrings.join('\n\n'))
-})
-
-app.get('/comments', async (c) => {
-	return c.json({
-		list: [{ name: 'A', body: 'B', createdAt: new Date() }],
-	})
-	// const comments = await getComments()
-	// return c.json(comments)
-})
+app.use('/*', cors())
+app.route('/comments', commentsRoute)
 
 export default app
