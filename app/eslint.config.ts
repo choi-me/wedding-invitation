@@ -22,6 +22,8 @@ export default defineConfigWithVueTs(
 	vueTsConfigs.recommended,
 	{
 		rules: {
+			// 🎨 Enforce type definitions to consistently use either interface or type.
+			'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
 			// ✅ Disallow accidentally using the "empty object" type.
 			'@typescript-eslint/no-empty-object-type': ['error', { allowInterfaces: 'always' }],
 			// ✅ Disallow the any type.

@@ -1,0 +1,122 @@
+@font-face {
+	src: url('/fonts/Bahagia.woff') format('woff');
+	font-family: 'Bahagia';
+	font-weight: 400;
+	font-display: swap;
+}
+
+@import 'tailwindcss';
+
+@theme {
+	--spacing: 0.0625rem;
+	--spacing-gnb-height: --spacing(80);
+
+	--font-sans:
+		'Noto Sans', 'Noto Sans CJK KR', -apple-system, BlinkMacSystemFont, 'NotoSansKR', sans-serif;
+	--font-bahagia: Bahagia, sans-serif;
+
+	--color-black1: #1e2228;
+	--color-black3: #31343c;
+	--color-black4: #41444c;
+	--color-gray6: #62666b;
+	--color-gray9: #999;
+	--color-grayA: #aaa;
+	--color-grayB: #bbb;
+	--color-grayC: #ccc;
+	--color-grayD: #ddd;
+	--color-grayE: #eee;
+	--color-whiteF2: #f2f2f2;
+	--color-whiteF5: #f5f5f5;
+	--color-lightBlue: #65b0d9;
+
+	--radius-2: --spacing(2);
+	--radius-4: --spacing(4);
+	--radius-6: --spacing(6);
+	--radius-8: --spacing(8);
+	--radius-12: --spacing(12);
+	--radius-16: --spacing(16);
+	--radius-20: --spacing(20);
+	--radius-24: --spacing(24);
+	--radius-32: --spacing(32);
+	--radius-40: --spacing(40);
+
+	--text-10: --spacing(10);
+	--text-11: --spacing(11);
+	--text-12: --spacing(12);
+	--text-13: --spacing(13);
+	--text-14: --spacing(14);
+	--text-15: --spacing(15);
+	--text-16: --spacing(16);
+	--text-18: --spacing(18);
+	--text-20: --spacing(20);
+	--text-24: --spacing(24);
+	--text-28: --spacing(28);
+	--text-32: --spacing(32);
+	--text-36: --spacing(36);
+	--text-40: --spacing(40);
+	--text-44: --spacing(44);
+	--text-48: --spacing(48);
+	--text-56: --spacing(56);
+	--text-64: --spacing(64);
+	--text-72: --spacing(72);
+
+	--font-t: 100;
+	--font-el: 200;
+	--font-l: 300;
+	--font-r: 400;
+	--font-m: 500;
+	--font-sb: 600;
+	--font-b: 700;
+	--font-bl: 900;
+}
+
+@utility t-* {
+	font-size: --value(--text-*, [length]);
+	line-height: --value(--text-* --line-height, [length]);
+	letter-spacing: --value(--text-* --letter-spacing, [length]);
+	font-weight: --modifier(--font-*, [*]);
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+html,
+body {
+	font-size: 16px;
+	@apply font-sans;
+}
+
+body {
+	@apply overflow-x-hidden overflow-y-auto bg-black1 select-none;
+}
+
+input,
+textarea {
+	@apply w-full rounded-4 border border-grayE p-12;
+}
+
+textarea {
+	@apply resize-none;
+}
+
+button {
+	@apply cursor-pointer;
+}
+
+dialog {
+	@apply m-auto;
+}
