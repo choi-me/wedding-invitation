@@ -3,7 +3,6 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import { onMounted, useTemplateRef } from 'vue'
 import { PageContainer } from '../container'
 
-import 'photoswipe/photoswipe.css'
 import 'photoswipe/style.css'
 
 const images = [
@@ -34,7 +33,8 @@ onMounted(() => {
 	if (el.value == null) return
 
 	const lightbox = new PhotoSwipeLightbox({
-		gallery: el.value,
+		// gallery: el.value,
+		gallery: '#gallery',
 		children: 'a',
 		showHideAnimationType: 'zoom',
 		showAnimationDuration: 500,
@@ -47,7 +47,7 @@ onMounted(() => {
 
 <template>
 	<PageContainer>
-		<div id="gallery" ref="el" class="pswp-gallery grid grid-cols-3 gap-4">
+		<div id="gallery" ref="el" class="grid grid-cols-3 gap-4">
 			<a
 				v-for="(image, index) in images"
 				:key="index"
@@ -56,12 +56,7 @@ onMounted(() => {
 				:data-pswp-height="image.h"
 				target="_blank"
 			>
-				<img
-					placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88B8AAqUB0Y/H4mkAAAAASUVORK5CYII="
-					:alt="image.url"
-					:src="image.url"
-					class="aspect-square object-cover"
-				/>
+				<img :alt="image.url" :src="image.url" class="aspect-square object-cover" />
 			</a>
 		</div>
 	</PageContainer>

@@ -98,7 +98,7 @@ const add = async () => {
 	</section>
 </template>
 
-<style>
+<style scoped>
 @reference '../style/app.css';
 
 section {
